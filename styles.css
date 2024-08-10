@@ -118,6 +118,22 @@ button:hover {
     margin: 10px 0;
 }
 
+.monthly-balance-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.monthly-balance-section .months {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 5px;
+}
+
+.monthly-balance-section .month-container p {
+    font-weight: bold;
+    color: #007bff;
+}
+
 @media (max-width: 768px) {
     .entry {
         grid-template-columns: 1fr;
