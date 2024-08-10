@@ -144,9 +144,6 @@ function removeEntry(button) {
     const entry = button.closest(".entry");
     entry.parentNode.removeChild(entry);
     calculateTotals();
-    // const entry = button.parentElement;
-    // entry.remove();
-    // calculateTotals();
 }
 
 // Load data when the page loads
