@@ -28,7 +28,7 @@ function collectData() {
             description: entry.querySelector('input[type="text"]').value,
             amounts: Array.from(
                 entry.querySelectorAll('.months input[type="number"]')
-            ).map((input) => parseFloat(input.value) || 0),
+            ).map((input) => parseFloat(input.value) || ""),
         };
         incomes.push(incomeData);
     });
@@ -39,7 +39,7 @@ function collectData() {
             description: entry.querySelector('input[type="text"]').value,
             amounts: Array.from(
                 entry.querySelectorAll('.months input[type="number"]')
-            ).map((input) => parseFloat(input.value) || 0),
+            ).map((input) => parseFloat(input.value) || ""),
         };
         expenses.push(expenseData);
     });
@@ -67,7 +67,7 @@ function populateData(data) {
 
 function addEntry(
     containerId,
-    data = { description: "", amounts: new Array(12).fill(0) }
+    data = { description: "", amounts: new Array(12).fill("") }
 ) {
     const container = document.getElementById(containerId);
 
@@ -105,10 +105,9 @@ function addEntry(
                 )
                 .join("")}
         </div>
-        <div class="annual-total">€${data.amounts.reduce(
-            (a, b) => a + b,
-            0
-        )}</div>
+        <div class="annual-total">€${data.amounts.reduce((a, b) => a + b, 0)}
+        <button class="remove-btn" onclick="removeEntry(this)">Remove</button>
+        </div>
     `;
     container.appendChild(newEntry);
 }
@@ -120,7 +119,7 @@ function calculateTotals() {
     document.querySelectorAll("#incomeContainer .entry").forEach((entry) => {
         const amounts = Array.from(
             entry.querySelectorAll('.months input[type="number"]')
-        ).map((input) => parseFloat(input.value) || 0);
+        ).map((input) => parseFloat(input.value) || "");
         const total = amounts.reduce((a, b) => a + b, 0);
         entry.querySelector(".annual-total").textContent = `€${total}`;
         totalIncome += total;
@@ -129,7 +128,7 @@ function calculateTotals() {
     document.querySelectorAll("#expenseContainer .entry").forEach((entry) => {
         const amounts = Array.from(
             entry.querySelectorAll('.months input[type="number"]')
-        ).map((input) => parseFloat(input.value) || 0);
+        ).map((input) => parseFloat(input.value) || "");
         const total = amounts.reduce((a, b) => a + b, 0);
         entry.querySelector(".annual-total").textContent = `€${total}`;
         totalExpenses += total;
@@ -139,6 +138,15 @@ function calculateTotals() {
     document.getElementById("totalExpenses").textContent = totalExpenses;
     document.getElementById("netSavings").textContent =
         totalIncome - totalExpenses;
+}
+
+function removeEntry(button) {
+    const entry = button.closest(".entry");
+    entry.parentNode.removeChild(entry);
+    calculateTotals();
+    // const entry = button.parentElement;
+    // entry.remove();
+    // calculateTotals();
 }
 
 // Load data when the page loads

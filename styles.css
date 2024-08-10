@@ -98,6 +98,20 @@ button:hover {
     background-color: #218838;
 }
 
+.remove-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
 .summary-section p {
     font-size: 1.2em;
     text-align: center;
