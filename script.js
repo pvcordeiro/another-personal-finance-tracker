@@ -104,8 +104,9 @@ function addEntry(
                 )
                 .join("")}
         </div>
+        <button class="remove-btn" onclick="removeEntry(this)">x</button>
         <div class="annual-total">€0</div>
-        <button class="remove-btn" onclick="removeEntry(this)">Remove</button>
+        
     `;
 
     container.appendChild(entry);
