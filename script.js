@@ -90,7 +90,7 @@ function addEntry(
     ];
 
     newEntry.innerHTML = `
-        <input type="text" value="${
+        <input class ="description" type="text" value="${
             data.description
         }" placeholder="Description">
         <div class="months">

@@ -9,8 +9,8 @@ app.use(bodyParser.json());
 
 // Connect to MongoDB
 mongoose.connect("mongodb://localhost/financeTracker", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
 });
 
 // Define schema and model
