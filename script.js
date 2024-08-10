@@ -183,5 +183,20 @@ function calculateTotals() {
     });
 }
 
+function toggleVisibility(containerId, buttonId) {
+    const container = document.getElementById(containerId);
+    const button = document.getElementById(buttonId);
+    container.classList.toggle("hidden");
+    button.classList.toggle("hidden");
+}
+
 // Load existing data when the page loads
-window.onload = loadData;
+window.onload = function () {
+    loadData();
+
+    // Initially hide the entry containers and buttons
+    document.getElementById("incomeContainer").classList.add("hidden");
+    document.getElementById("addIncomeBtn").classList.add("hidden");
+    document.getElementById("expenseContainer").classList.add("hidden");
+    document.getElementById("addExpenseBtn").classList.add("hidden");
+};

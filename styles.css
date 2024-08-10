@@ -24,6 +24,15 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
+/* Toggle Visibility */
+.hidden {
+    display: none;
+}
+
+.toggle-btn {
+    margin-bottom: 10px;
+}
+
 /* Headings */
 h1,
 h2 {
@@ -43,7 +52,14 @@ h2 {
 
 /* Form Container */
 .entry-container {
-    margin-bottom: 20px;
+    transition: max-height 0.5s ease-out;
+    overflow: hidden;
+}
+.entry-container.hidden {
+    max-height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
 }
 
 .entry {
@@ -66,6 +82,8 @@ h2 {
     border-radius: 4px;
     border: 1px solid #ccc;
 }
+
+
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
