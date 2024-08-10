@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.entry-container {
+    margin-bottom: 20px;
+}
+
+.entry {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.entry input[type="text"], .entry input[type="number"] {
+    padding: 5px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.months {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 5px;
+}
+
+.month-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.month-container label {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.month-container input[type="number"] {
+    padding: 5px;
+    font-size: 1em;
+    width: 80px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.annual-total {
+    text-align: right;
+    font-weight: bold;
+    color: #007bff;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto 20px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.summary-section p {
+    font-size: 1.2em;
+    text-align: center;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .entry {
+        grid-template-columns: 1fr;
+    }
+
+    .entry .months {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .annual-total {
+        text-align: left;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .entry .months {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .annual-total {
+        text-align: left;
+        font-size: 1em;
+    }
+}

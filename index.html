@@ -3,11 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Finance Tracker</title>
+    <title>Income and Expense Tracker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    Content goes here
+    <div class="container">
+        <h1>Income and Expense Tracker</h1>
+        
+        <section class="income-section">
+            <h2>Income</h2>
+            <div class="entry-container" id="incomeContainer"></div>
+            <button onclick="addEntry('incomeContainer')">Add Income</button>
+        </section>
+
+        <section class="expense-section">
+            <h2>Expenses</h2>
+            <div class="entry-container" id="expenseContainer"></div>
+            <button onclick="addEntry('expenseContainer')">Add Expense</button>
+        </section>
+
+        <section class="summary-section">
+            <h2>Summary</h2>
+            <p>Total Income: €<span id="totalIncome">0</span></p>
+            <p>Total Expenses: €<span id="totalExpenses">0</span></p>
+            <p>Net Savings: €<span id="netSavings">0</span></p>
+            <button onclick="saveData()">Save Data</button>
+        </section>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
